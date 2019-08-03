@@ -54,6 +54,99 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+.flexBoxRow() {
+	display: flex;
+	@media (max-width:500px){
+		justify-content: center;
+	}
+}
+
+.flexBoxWarp() {
+	.flexBoxRow();
+	flex-wrap: wrap;	
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.margin {
+	margin: 10px;
+}
+
+@BK-color: lightgray;
+
+h1 {
+	font-size: 3rem;
+	.margin;
+}
+
+h2 {
+	font-size: 2rem;
+	.margin;
+}
+
+.home-page {
+	.container();
+	header{
+		nav{
+			.flexBoxRow();
+			justify-content: flex-end;	
+			a{
+				.margin;
+			} 
+		}
+	}// end of header 
+	.section-one {
+		background-color: @BK-color;
+		padding: 50px 25px;
+	}
+	p{
+		.margin;
+	}//end of section one
+	.section-two {
+		.flexBoxRow();
+		justify-content: space-around;
+		.content{
+			width: 380px;
+		}
+		li {
+			border: solid 1px darkgray;
+			padding: 5px;
+		}
+	}//end of section two
+	.section-three {
+		.lables {
+			font-style: bold;
+			.flexBoxRow();
+			justify-content: space-evenly;
+			border-bottom: solid 1px;
+			.margin;
+			li{
+				width: 266px;
+			}
+		}
+		.entry {
+			.flexBoxRow();
+			justify-content: space-evenly;
+			.margin;
+			li {
+				width: 266px;
+			}
+		}
+		.odd-entry {
+			.entry();
+			background-color: @BK-color;
+		}
+	}
+	.footer {
+		background-color: @BK-color;
+		.margin;
+		.flexBoxRow();
+		justify-content: center;
+	}	
+}	
